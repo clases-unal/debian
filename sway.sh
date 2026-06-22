@@ -32,9 +32,12 @@ systemctl enable greetd
 
 # Configuración automática de greetd para usar tuigreet y arrancar Sway
 cat <<EOF > /etc/greetd/config.toml
+[terminal]
+vt = 7
+
 [default_session]
 command = "tuigreet --time --remember --cmd sway"
-user = "greeter"
+user = "_greetd"
 EOF
 
 # -----------------------------------------------------------------------------
