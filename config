@@ -28,7 +28,7 @@ bindsym XF86AudioPlay exec playerctl play-pause
 bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 
-# --- COMPONENTES DEL ENTORNO EN SEGUNDO PLANO ---
+# --- COMPONENTES EN SEGUNDO PLANO ---
 exec udiskie --tray
 exec nm-applet --indicator
 exec blueman-applet
@@ -37,12 +37,21 @@ exec /usr/lib/x86_64-linux-gnu/libexec/polkit-kde-authentication-agent-1
 
 # --- ATAJOS DEL SISTEMA ---
 set $term kitty
-set $menu fuzzel
+set $menu woofi --show drun
+
 bindsym $mod+Return exec $term
 bindsym $mod+d exec $menu
 
 # Lanzar configurador gráfico de pantallas externas (wdisplays)
 bindsym $mod+Shift+p exec wdisplays
+
+# --- CHEAT SHEET DE ATAJOS DINÁMICO (Ventana Flotante Express) ---
+# Lee este archivo, filtra los bindsym y los muestra en Woofi de forma flotante
+bindsym $mod+k exec grep -E '^bindsym' ~/.config/sway/config | sed 's/bindsym //' | woofi --show dmenu -p "Atajos activos:"
+
+# --- REGLAS DE VENTANAS FLOTANTES ---
+for_window [app_id="wdisplays"] floating enable
+for_window [app_id="btrfs-assistant"] floating enable
 
 bar {
     swaybar_command waybar
