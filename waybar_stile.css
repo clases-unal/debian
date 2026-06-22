@@ -1,0 +1,203 @@
+* {
+    font-family: FontAwesome, "Noto Sans", Roboto, Helvetica, Arial, sans-serif;
+    font-size: 19px;
+}
+
+/* =======================
+   BARRA PRINCIPAL
+   ======================= */
+window#waybar {
+    background: rgba(15, 20, 25, 0.88);
+    color: #dce3ea;
+    border-bottom: 1px solid #2a3038;
+}
+
+/* =======================
+   BOTONES
+   ======================= */
+button {
+    border-radius: 6px;
+    color: #cfd6dc;
+}
+
+button:hover {
+    background: rgba(255, 255, 255, 0.04);
+}
+
+/* =======================
+   WORKSPACES
+   ======================= */
+#workspaces button {
+    padding: 0 0.7em;
+    margin: 4px 2px;
+    background: transparent;
+    color: #8f9aa3;
+}
+
+#workspaces button:hover {
+    background: rgba(79, 163, 199, 0.15);
+}
+
+#workspaces button.focused {
+    background: rgba(79, 163, 199, 0.18);
+    color: #ffffff;
+    box-shadow: inset 0 -2px #4fa3c7;
+}
+
+#workspaces button.urgent {
+    background: rgba(168, 58, 58, 0.35);
+    color: #ffffff;
+}
+
+/* =======================
+   MÓDULOS GENERALES
+   ======================= */
+#clock,
+#battery,
+#cpu,
+#memory,
+#disk,
+#temperature,
+#backlight,
+#network,
+#pulseaudio,
+#wireplumber,
+#custom-media,
+#tray,
+#mode,
+#idle_inhibitor,
+#scratchpad,
+#power-profiles-daemon,
+#mpd {
+    padding: 0 12px;
+    margin: 6px 4px;
+    background: rgba(21, 27, 34, 0.9);
+    color: #dce3ea;
+    border: 1px solid #2a3038;
+    border-radius: 8px;
+}
+
+/* =======================
+   CLOCK
+   ======================= */
+#clock {
+    color: #6b8fb3;
+    letter-spacing: 0.5px;
+}
+
+/* =======================
+   CPU / TEMP
+   ======================= */
+#cpu {
+    color: #9fbad1;
+}
+
+#temperature {
+    color: #cfd6dc;
+}
+
+/* =======================
+   BATTERY
+   ======================= */
+#battery {
+    color: #9fbad1;
+}
+
+#battery.charging {
+    color: #4fa3c7;
+}
+
+#battery.critical:not(.charging) {
+    color: #ffffff;
+    background: rgba(168, 58, 58, 0.4);
+    animation: blink 0.8s infinite alternate;
+}
+
+/* =======================
+   AUDIO
+   ======================= */
+#pulseaudio {
+    color: #cfd6dc;
+}
+
+#pulseaudio.muted {
+    color: #7c8791;
+}
+
+/* =======================
+   NETWORK
+   ======================= */
+#network {
+    color: #9fbad1;
+}
+
+#network.disconnected {
+    color: #7c8791;
+}
+
+/* =======================
+   IDLE INHIBITOR
+   ======================= */
+#idle_inhibitor {
+    color: #6b8fb3;
+}
+
+#idle_inhibitor.activated {
+    background: rgba(79, 163, 199, 0.25);
+    color: #ffffff;
+}
+
+/* =======================
+   SCRATCHPAD
+   ======================= */
+#scratchpad {
+    color: #cfd6dc;
+}
+
+#scratchpad.empty {
+    background: transparent;
+    border: none;
+}
+
+/* =======================
+   TRAY
+   ======================= */
+#tray {
+    background: rgba(21, 27, 34, 0.9);
+}
+
+#tray > .passive {
+    -gtk-icon-effect: dim;
+}
+
+/* =======================
+   PRIVACIDAD
+   ======================= */
+#privacy-item {
+    padding: 0 6px;
+    background: rgba(79, 163, 199, 0.3);
+    color: #ffffff;
+    border-radius: 6px;
+}
+
+/* =======================
+   KEYBOARD STATE
+   ======================= */
+#keyboard-state {
+    background: rgba(21, 27, 34, 0.9);
+    color: #dce3ea;
+    border-radius: 6px;
+}
+
+#keyboard-state > label.locked {
+    background: rgba(79, 163, 199, 0.35);
+}
+
+/* =======================
+   ANIMACIONES
+   ======================= */
+@keyframes blink {
+    to {
+        background-color: rgba(168, 58, 58, 0.65);
+    }
+}
